@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>task number 1</h2>
+    <button onclick="showalert()">START </button>
+    <script>
+        function showalert(){
+            alert("GOOD MORNING");
+        }
+        </script>
+        
+        <button onclick="document.body.style.backgroundColor='yellow'">make background colour yellow</button>
+        <h2>task number 2</h2>
+        <p id="para">Mouse detected</p>
+        
+
+        <script>
+            document.getElementById("para").onmouseover= function(){
+this.style.color ="green";
+this.textContent = "mouse detected"
+}
+document.getElementById("para").onmouseout= function(){
+this.style.color ="black";
+this.textContent="move your mouse here"
+}
+
+
+
+
+        </script>
+        <h2>task number 3</h2>
+        <input type="text" id="userInput" placeholder="Type something...">
+        <p id="output"></p>
+
+        <script>
+            document.getElementById("userInput").oninput = function(){
+                document.getElementById("output").textContent = "You typed: " + this.value;
+            }
+            
+                
+            
+        </script>
+        <div>
+            <h2>task number 4</h2>
+            <p id="textPara"></p>
+            <button onclick="document.getElementById('textPara').innerHTML = 'my fav teacher is miss ruban'">Fill Paragraph</button>
+        </div>
+        <h2>task number 6</h2>
+        <input type="text" id="numberInput" placeholder="Enter a number...">
+        <button onclick="document.getElementById('numberInput').blur()">Check</button>
+
+        <script>
+            document.getElementById("numberInput").onblur = function(){
+                if(isNaN(this.value) || this.value === ""){
+                    alert("Invalid number!");
+                } else {
+                    alert("Valid number!");
+                }
+            }
+
+        </script>
+        <h1>tak number 7</h1>
+        <h2 id="heading">hi miss</h2>
+
+        <script>
+            document.getElementById("heading").ondblclick = function(){
+                this.style.color = "blue";
+                this.style.fontSize = "32px";
+            }
+        </script>
+        <h2>task number 8</h2><br>
+        <button onclick="document.write('achi miss ki nishani hai k wo full mask den or miss ruban bht achi hai')">Write Text</button><br><br>
+        <h2>task number 9</h2>
+
+
+        <input type="number" id="num1" placeholder="Enter first number...">
+        <input type="number" id="num2" placeholder="Enter second number...">
+        <button onclick="addNumbers()">Add Numbers</button>
+        <p id="result"></p>
+
+        <script>
+            function addNumbers(){
+                let num1 = parseInt(document.getElementById("num1").value);
+                let num2 = parseInt(document.getElementById("num2").value);
+                let sum = num1 + num2;
+                document.getElementById("result").textContent = "Sum: " + sum;
+            }
+        </script>
+        <input type="number" id="num1" placeholder="Enter first number...">
+        <input type="number" id="num2" placeholder="Enter second number...">
+        <button onclick="addNumbers()">Add Numbers</button>
+        <p id="result"></p>
+        <script>
+            function addNumbers(){
+                let num1 = parseFloat(document.getElementById("num1").value);
+                let num2 = parseFloat(document.getElementById("num2").value);
+                let sum = num1 + num2;
+                document.getElementById("result").textContent = "Sum: " + sum;
+            }
+        </script>
+        <h2>task number 10</h2>
+        <div id="colorBox" style="width: 200px; height: 200px; background-color: white; margin-top: 20px; border: 1px solid black;"></div>
+        <button onclick="document.getElementById('colorBox').style.backgroundColor='red'">Red</button>
+        <button onclick="document.getElementById('colorBox').style.backgroundColor='green'">Green</button>
+        <button onclick="document.getElementById('colorBox').style.backgroundColor='blue'">Blue</button>
+        <button onclick="document.getElementById('colorBox').style.backgroundColor='white'">Reset</button>
+
+       
+
+
+</body>
+</html>

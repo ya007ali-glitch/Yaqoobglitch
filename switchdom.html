@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="grade" placeholder="A/B/C/D/F">
+    <button onclick="checkGrade()">Check Grade</button>
+    <p id="result"></p>
+    <script>
+        function checkGrade(){
+            let grade = document.getElementById("grade").value.toUpperCase();
+            let result = "";
+
+            switch(grade){
+                case 'A':
+                    result = "Excellent";
+                    break;
+                case 'B':
+                    result = "Very Good";
+                    break;
+                case 'C':
+                    result = "Good";
+                    break;
+                case 'D':
+                    result = "Pass";
+                    break;
+                case 'F':
+                    result = "Fail";
+                    break;
+                default:
+                    result = "Invalid Grade";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+    
+</body>
+</html>

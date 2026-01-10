@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"  id="email" placeholder="Enter your email">
+    <button onclick="checkEmail()">Validate Email</button>
+    <p id="output"></p>
+    <script>
+        function checkEmail() {
+            let email= document.getElementById("email").value;
+            let Pattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            
+
+            if (Pattern.test(email)) {
+                document.getElementById("output").innerHTML = "Valid email address.";
+                
+            } else {
+                document.getElementById("output").innerHTML = "inValid email address.";
+            }
+        }
+    </script>
+    <input type="text" id="pass" placeholder="enter password">
+    <button onclick="checkPassword()">Validate Password</button>
+    <p id="msg"></p>
+    <script>
+        function checkPassword(){
+            let p = 
+            document.getElementById("pass").value;
+            let output = "";
+
+            if(p.length >=10){
+                output = "strong password✊<br>";
+            }
+            else if(p.length >=6 ){
+                output = "medium password👌<br>";
+            }
+            else{
+                output = "weak password👻<br>";
+            }
+            document.getElementById("msg").innerHTML = output;
+
+        }
+    </script>
+    <input type="text" id="temperature" placeholder="enter temperature">
+    <button onclick="checkTemperature()">Check Temperature</button>
+    <p id="Msg"></p>
+    <script>
+        function checkTemperature(){
+            let temp = (document.getElementById("temperature").value);
+           let message = "";
+
+            if(temp > 40){
+                message= "extremely hot";
+            }
+            else if(temp > 30){
+                message = "The weather today is normal.";
+            }
+            else if(temp > 20){
+               message  = "Today's weather is cool.";
+            }
+            else if(temp > 10){
+                message = "OMG! Today's weather is so cool.";
+            }
+            else{
+                message = "Temperature is below 10 degrees.";
+            }
+
+            document.getElementById("Msg").innerHTML = message;
+        }
+    </script>
+
+</body>
+</html>

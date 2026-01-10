@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h1>product list</h1>
+
+    <button onclick="addTocart('ship',2000)">add shoes (2000)</button>
+    <button onclick="addTocart('shirt',5000)">add shoes (5000)</button>
+    <button onclick="addTocart('watch',3000)">add shoes (8000)</button>
+
+    <hr>
+    <h2>your cart</h2>
+    <div id="cartbox"></div>
+    <h3>toral item : <span id="totalcount">0</span></h3>
+     <h3>toral price : rs<span id="totalprice">0</span></h3>
+
+     <script>
+        let cart = [];
+        function addTocart (productName,price){
+            cart.push({
+                name: productName,
+                price: price
+
+            });
+            rendercart(); //refresh ui using loop
+
+        }
+        function rendercart(){
+            let box =
+            document.getElementById("cartbox");
+            let count =
+            document.getElementById("totalcount");
+            let totalpricetag =
+            document.getElementById("totalprice");
+
+            let output = "";
+            let totalprice = 0;
+
+            //loop going through each item in cart
+            for(let i = 0; i < cart.length; i++){
+                output += ` <p> ${i+1} . ${cart[i].name} - rs ${cart[i].price} </p> `;
+                totalprice += cart[i].price;//loop counting the products
+
+                
+                
+            }
+            box.innerHTML = output;
+            count.innerHTML = cart.length;
+            totalpricetag.innerHTML = totalprice;
+        }
+     </script>
+
+
+</body>
+</html>

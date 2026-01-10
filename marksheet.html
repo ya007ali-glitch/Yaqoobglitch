@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUdBId4zYZPRDmfR2HeT8SJB-BzQeRLXNeZg&s');
+             ;
+                
+            
+        }
+        input, button {
+            margin: 10px 0;
+        } 
+    *{
+        
+        text-align: center;
+        padding-top: 50px;
+    } 
+    #marks{
+        box-shadow: #126ac2 5px 5px 15px;
+        height: 20px;
+        text-align: center;
+    }
+    :placeholder-shown{
+        
+        color: black;
+        text-align: center;
+    }
+
+
+    </style>
+</head>
+<body>
+            
+    
+    
+    
+
+    <h2>Student Marksheet</h2>
+
+    <input type="number" id="marks" placeholder="Enter your marks">
+    <button onclick="checkResult()">Check Result</button>
+
+    <p id="result"></p>
+
+    <script>
+        function checkResult() {
+            let marks = parseInt(document.getElementById("marks").value);
+            let result = "";
+
+            if (marks < 0 || marks > 100) {
+                result = "Invalid Marks";
+            }
+            else if (marks >= 80) {
+                result = "Grade A+ (Excellent)";
+            }
+            else if (marks >= 70) {
+                result = "Grade A";
+            }
+            else if (marks >= 60) {
+                result = "Grade B";
+            }
+            else if (marks >= 50) {
+                result = "Grade C";
+            }
+            else {
+                result = "Fail";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+
+</body>
+</html>

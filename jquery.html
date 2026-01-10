@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    
+    <input type="email" id="input"  placeholder="enter something" required> <br><br>
+    <button id="btn">submit</button>
+    <p id="msg"></p>
+    <div id="box" style="width: 100px; height: 100px; background-color: red;"></div>
+    <p id="menu"> hover</p>
+
+    <select  id="color">
+        <option> red</option>
+        <option >blue</option>
+        <option > green</option>
+        <option > black</option>
+    </select>
+    <p id="result"></p>
+    
+    <script>
+        $("#btn").submit(function(e){
+            e.preventDefault();
+            $("#msg").text("form is submitted!");
+
+        });
+        $("#box").dblclick(function(){
+            $(this).css("background-color", "blue");
+        });
+        $("#menu").hover(function(){
+            $(this).css("color", "green");
+        });
+        $("#color").change(function(){
+            $("#result").text($(this).val());
+            
+        }); 
+
+    </script>
+
+<input type="text" id="email">
+<script>
+    $("#email").focus(function(){
+        $(this).css("border","5px solid  yellow");
+    });
+</script>
+
+
+    
+</body>
+</html>

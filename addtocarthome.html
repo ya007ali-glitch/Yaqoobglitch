@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Cart UI</title>
+
+<style>
+/* ----- BACKGROUND VIDEO STYLE ----- */
+.bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.6; /* dark effect */
+}
+
+/* ----- BASIC PAGE STYLE ----- */
+body {
+    font-family: Arial;
+    background: linear-gradient(black), red;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+/* ----- PRODUCT BOX STYLE ----- */
+.cart {
+    width: 180px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px #ccc;
+    text-align: center;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin-right: 15px;
+}
+
+/* ----- PRODUCT IMAGE ----- */
+.cart img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* ----- BUTTON STYLE ----- */
+.cart button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: rgb(229, 6, 6);
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart button:hover {
+    background: rgb(4, 1, 1);
+}
+</style>
+
+</head>
+<body>
+
+
+<!-- 🔥 FULL SCREEN BACKGROUND VIDEO 🔥 -->
+<video autoplay muted loop class="bg-video">
+    <source src="https://cdn.pixabay.com/video/2022/03/08/110708-693589567_large.mp4" type="video/mp4">
+
+</video>
+
+
+<h1>Product List</h1>
+
+<!-- PRODUCT 1 -->
+<div class="cart">
+    <img src="https://wwd.com/wp-content/uploads/2025/12/Michael-Jordan-Shattered-Backboard-sneaker.jpg?w=1000&h=563&crop=1" alt="Shoes">
+    <button onclick="addTocart('shoes',2000)">Add Shoes (2000)</button>
+</div>
+
+<!-- PRODUCT 2 -->
+<div class="cart">
+    <img src="https://cdn.vectorstock.com/i/500p/83/28/red-and-black-e-sport-t-shirt-template-vector-21028328.jpg" alt="Shirt">
+    <button onclick="addTocart('shirt',5000)">Add Shirt (5000)</button>
+</div>
+
+<!-- PRODUCT 3 -->
+<div class="cart">
+    <img src="https://blog.luxehouze.com/wp-content/uploads/2024/06/2-11-768x432.jpg" alt="Watch">
+    <button onclick="addTocart('watch',3000)">Add Watch (3000)</button>
+</div>
+
+<!-- PRODUCT 4 -->
+<div class="cart">
+    <img src="https://tango-sports.com/cdn/shop/files/5_bd8f5425-b72c-4a07-9069-d9415693f7f3.jpg?v=1726721407&width=645" alt="Bag">
+    <button onclick="addTocart('bag',4000)">Add Bag (4000)</button>
+</div>
+
+<hr>
+
+<h2>Your Cart</h2>
+<div id="cartbox"></div>
+
+<h3>Total items: <span id="totalcount">0</span></h3>
+<h3>Total price: Rs <span id="totalprice">0</span></h3>
+
+<script>
+let cart = [];
+
+function addTocart(productName, price) {
+    cart.push({
+        name: productName,
+        price: price
+    });
+    rendercart();
+}
+
+function rendercart() {
+    let box = document.getElementById("cartbox");
+    let count = document.getElementById("totalcount");
+    let totalpricetag = document.getElementById("totalprice");
+
+    let output = "";
+    let totalprice = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        output += `<p>${i + 1}. ${cart[i].name} - Rs ${cart[i].price}</p>`;
+        totalprice += cart[i].price;
+    }
+
+    box.innerHTML = output;
+    count.innerHTML = cart.length;
+    totalpricetag.innerHTML = totalprice;
+}
+</script>
+
+</body>
+</html>
+
+
+

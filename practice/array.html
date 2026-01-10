@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Music List</h1>
+    <input type="text" id="playlist" placeholder="Enter YOUR SONG">
+    <button onclick="addSong()">Add Song</button>
+    <p><strong>playlist</strong></p>
+    <ul id="musiclist"></ul>
+    <script>
+        let songs = [];
+        function addsong() {
+            let songinput = document.getElementById("playlist").value;
+            songs.push(songinput);
+            document.getElementById("musiclist").innerHTML = "";
+                    
+
+            
+            
+    
+
+            
+
+        
+    </script>
+</body>
+</html>
+

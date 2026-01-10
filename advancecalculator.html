@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="gradecalculator" placeholder="enter a total marks">
+    <button onclick="checkGradeCalculator()">Check Grade</button>
+    <p id="resultcalculator"></p>
+    <script>
+        function checkGradeCalculator(){
+            let marks = (document.getElementById("gradecalculator").value);
+            let result = "";
+
+            // true is liye use kiya gya hai kyu ki hume range check karni hai
+
+            switch(true){
+                
+                case (marks >= 90):
+                    result = "A+";
+                    break;
+                case (marks >= 80 && marks < 89):
+                    result = "A";
+                    break;
+                case (marks >= 70 && marks < 79):
+                    result = "B";
+                    break;
+                case (marks >= 60 && marks < 69):
+                    result = "C";
+                    break;
+                case (marks >= 0 && marks < 60):
+                    result = "F";
+                    break;
+                default:
+                    result = "Invalid Marks";
+            }
+
+            document.getElementById("resultcalculator").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

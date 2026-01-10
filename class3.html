@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showalert()">showalert </button>
+    <button onclick="open()">hello </button>
+    <button onclick="close">hiii </button>
+    <p id="para">hover over me</p>
+    <input type="text" id="name" placeholder="type">
+       <script>
+        function showalert(){
+            alert("welcome to our javascript");
+        }
+
+        function open(){
+            alert("welcome");
+        }
+
+        function close(){
+            alert("good bye");
+        }
+
+        document.write("<h3> this text is written by javascript");
+
+            document.getElementById("demo").innerHTML= "content nsertted using innerhtml";
+
+            let result = parseFloat("12.34");
+            console.log(result);
+
+            let resultt = parseInt("14.56");
+            console.log(resultt);
+
+            console.log(isNaN("hello"));//true
+            console.log(isNaN(12345));//false
+
+            document.getElementById("para").onmouseover= function (){
+                this.style.color="red";
+            }
+
+
+    </script>
+</body>
+</html>

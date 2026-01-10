@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="out1" ></div>
+    <script>
+        let div = 
+        document.getElementById("out1");
+        let text = "";
+        const emoji = "😊" ;
+    
+        for(let i = 1; i <= 10; i++){
+            text += i + " " + emoji + "<br>";
+            
+        }
+
+        div.innerHTML = text;
+    </script>
+</body>
+</html>
