@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            background: rgb(91, 154, 212);
+
+        }
+        .prodaddinguct-section{
+            text-align: center;
+            p: 40px 20px;
+
+        }
+        .product-section h1{
+            color: aquamarine;
+            margin-bottom: 10%;
+
+        }
+        .product-ccontainer{
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-card{
+            background: rgb(5, 244, 236);
+            border-radius: 15px;
+            box-shadow: 0 4px 8px;
+            padding: 20px;
+            width: 250px;
+            transition:  transform 0.03s ease;
+
+        }
+        .product-card:hover{
+            transform: translateY(-10px);
+        }
+        .product-card img{
+            width: 100%;
+            border-radius: 10px;
+
+        }
+        .product-card h3{
+            margin: 15px 0 15px;
+            color: black;
+        }
+        .product-card p{
+                    font-weight: bold;
+                    color: rgb(223, 4, 4);
+        }
+        .product-card button{
+            background-color: black;
+              color: aliceblue;
+              padding: 10px 25px;
+              border-radius: 25px;
+              cursor: pointer;
+              transition: background 0.3s ease;
+              box-shadow: inset;
+        }
+        .product-card:hover{
+            background-color: rgb(82, 219, 110);
+        }
+    </style>
+</head>
+<body>
+    <section class="product-section">
+        <h1>Featured Porducts</h1>
+        <div class="product-containar">
+            <div class="product-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBoIlyEY3oUtp8ClamSj5mjOCq6_yakgqqBQ&s" alt="image2">
+                <h3>Smart watch</h3>
+                <p>5000</p>
+                <buttom type="submit">Buy Now</buttom>
+            </div>
+            <div class="product-card">
+                <img src="https://m.media-amazon.com/images/I/81wdmgabXFL._AC_SL1500_.jpg" alt="image 2">
+                <h3>Speakar</h3>
+                <P>4000</P>
+                <button>Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="https://images-cdn.ubuy.co.in/64cc49cb7c8f99705b10a5a5-wireless-earbuds-bluetooth-headset-with.jpg" alt="image 3">
+                <h3>Earbuds</h3>
+                <p>3500</p>
+                <button type="submit">Buy Now</button>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
